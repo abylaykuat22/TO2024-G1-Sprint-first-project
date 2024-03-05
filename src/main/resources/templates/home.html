@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/developers/add" method="post">
+    <label for="fullNameField">FULL NAME:</label>
+    <input name="fullName" type="text" id="fullNameField"><br>
+    <label for="ageField">AGE:</label>
+    <input name="age" type="number" id="ageField"><br>
+    <label for="birthPlaceField">BIRTH PLACE:</label>
+    <input name="birthPlace" type="text" id="birthPlaceField"><br>
+    <button type="submit">ADD DEVELOPER</button>
+</form>
+<table cellpadding="10px">
+    <thead>
+    <th>ID</th>
+    <th>FULL NAME</th>
+    <th>AGE</th>
+    <th>BIRTH PLACE</th>
+    </thead>
+    <tbody>
+        <tr th:each="developer : ${razraby}">
+            <td th:text="${developer.id}"></td>
+            <td th:text="${developer.fullName}"></td>
+            <td th:text="${developer.age}"></td>
+            <td th:text="${developer.birthPlace}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
